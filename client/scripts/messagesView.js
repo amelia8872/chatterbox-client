@@ -10,18 +10,19 @@ var MessagesView = {
   initialize: function() {
     // TODO: Perform any work which needs to be done
     // when this view loads.
+
   },
 
   render: function() {
     // TODO: Render _all_ the messages.
     // console.log(Messages._data);
-    console.log('here running messagesVies.render()');
+    // console.log('here running messagesViews.render()');
 
     // Iterate through the messages array
     for (var i = 0; i < Messages._data.length; i++) {
       var message = Messages._data[i];
       // console.log(message);
-      this.renderMessage(message);
+      MessagesView.renderMessage(message);
 
 
       // use messageView.render to transfer message to html template

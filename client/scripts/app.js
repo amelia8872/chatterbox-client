@@ -29,8 +29,18 @@ var App = {
       console.log(data);
       Messages._data = data;
       // console.log(Messages._data);
-      console.log(Rooms._data);
+      Rooms._data = data;
+      // make roomObj
+      Rooms.makeRoomObj(Rooms._data);
+      // console.log(Rooms.roomObj);
+      RoomsView.render();
+
+
       MessagesView.render();
+
+
+      // Without callback, the Submit does not work
+      callback();
 
 
       // TODO: Use the data to update Messages and Rooms

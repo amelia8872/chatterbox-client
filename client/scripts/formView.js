@@ -21,7 +21,7 @@ var FormView = {
     var message = {
       username: App.username,
       text: $('input:text').val(),
-      roomname: null,
+      roomname: $('#rooms select').val(),
     };
 
     // using api to create the message
