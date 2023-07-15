@@ -63,7 +63,7 @@ var RoomsView = {
   handleClick: function(event) {
     // TODO: Handle the user clicking the "Add Room" button.
     var newRoom = $('input:text').val();
-    Rooms.roomObj[newRoom] = [];
+    Rooms.add(newRoom);
     RoomsView.render();
     RoomsView.$select.val(newRoom);
   }

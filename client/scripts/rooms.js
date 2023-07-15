@@ -6,15 +6,16 @@ var Rooms = {
 
   // TODO: Define how you want to store the list of rooms
 
-  _data: {},
+  _roomList: [],
   roomObj: {},
 
   // TODO: Define methods which allow you to add rooms, update the list,
   // mark a room as selected, etc.
   add: function(roomname) {
-    if (!this.roomObj.hasOwnProperty(roomName)) {
-      // add roomName key and initialize an empty array
-      this.roomObj[roomName] = [];
+    Rooms._roomList = Object.keys(Rooms.roomObj);
+    if (!Rooms._roomList.includes(roomname)) {
+      Rooms._roomList.push(roomname);
+      Rooms.roomObj[roomname] = [];
     }
   },
 
