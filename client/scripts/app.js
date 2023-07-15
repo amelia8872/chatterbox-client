@@ -27,6 +27,11 @@ var App = {
     Parse.readAll((data) => {
       // examine the response from the server request:
       console.log(data);
+      Messages._data = data;
+      // console.log(Messages._data);
+      console.log(Rooms._data);
+      MessagesView.render();
+
 
       // TODO: Use the data to update Messages and Rooms
       // and re-render the corresponding views.
