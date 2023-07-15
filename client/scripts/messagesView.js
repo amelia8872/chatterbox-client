@@ -10,17 +10,22 @@ var MessagesView = {
   initialize: function() {
     // TODO: Perform any work which needs to be done
     // when this view loads.
+    MessagesView.$chats.on('click', '.username', function(event) {
+      console.log('username add friend clicked!');
+      var username = event.currentTarget.textContent;
+      Friends.toggleStatus(username);
+    });
 
   },
 
-  render: function() {
+  render: function(messageArray) {
     // TODO: Render _all_ the messages.
     // console.log(Messages._data);
     // console.log('here running messagesViews.render()');
 
     // Iterate through the messages array
-    for (var i = 0; i < Messages._data.length; i++) {
-      var message = Messages._data[i];
+    for (var i = 0; i < messageArray.length; i++) {
+      var message = messageArray[i];
       // console.log(message);
       MessagesView.renderMessage(message);
 

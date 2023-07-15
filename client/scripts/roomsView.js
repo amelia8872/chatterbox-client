@@ -39,13 +39,14 @@ var RoomsView = {
     // TODO: Render out a single room.
     // console.log('renderRoom');
     // MessagesView.$chats.empty();
-    // var messages = Rooms.makeRoomObj[roomname];
-    // console.log(messages);
+
     // for (var i = 0; i < messages.length; i++) {
     //   MessagesView.renderMessage(messages[i]);
     // }
+
     RoomsView.$select.append(`<option>${roomname}</option>`);
-    MessagesView.render(Rooms.roomObj[roomname]);
+    //
+
 
   },
 
@@ -55,12 +56,13 @@ var RoomsView = {
     MessagesView.$chats.empty();
 
     // display the message for specific room
-    RoomsView.renderRoom($('#rooms select').val());
+    // RoomsView.renderRoom($('#rooms select').val());
+    MessagesView.render(Rooms.roomObj[$('#rooms select').val()]);
   },
 
   handleClick: function(event) {
     // TODO: Handle the user clicking the "Add Room" button.
-    var newRoom = $('#rooms select').val();
+    var newRoom = $('input:text').val();
     Rooms.roomObj[newRoom] = [];
     RoomsView.render();
     RoomsView.$select.val(newRoom);

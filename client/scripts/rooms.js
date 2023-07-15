@@ -11,6 +11,12 @@ var Rooms = {
 
   // TODO: Define methods which allow you to add rooms, update the list,
   // mark a room as selected, etc.
+  add: function(roomname) {
+    if (!this.roomObj.hasOwnProperty(roomName)) {
+      // add roomName key and initialize an empty array
+      this.roomObj[roomName] = [];
+    }
+  },
 
 
   // that is the format of data
@@ -27,6 +33,7 @@ var Rooms = {
         this.roomObj[roomName].push(message);
       }
     }
+    console.log(Rooms.roomObj);
   }
 
 

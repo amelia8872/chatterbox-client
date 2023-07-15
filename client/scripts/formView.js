@@ -21,6 +21,7 @@ var FormView = {
     var message = {
       username: App.username,
       text: $('input:text').val(),
+      // roomname: 'amelia',
       roomname: $('#rooms select').val(),
     };
 
